@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Production build artifacts
+dist/
+dist-ssr/
+*.local
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Editor & OS metadata
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.vscode/
+.idea/
+
+# Agent & temporary scratch files
+.gemini/
+scratch/
+capture.js
+temp_head*.jpg
+
+# Loose duplicate root video files (originals preserved in Final Assets for Web - Panda and public/assets)
+/upscaled-video-1.mp4
+/video 2*.mp4
+/Panda_animating_into_fighting_pose_*.mp4

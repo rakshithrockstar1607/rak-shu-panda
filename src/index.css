@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #140103;
+    color: #f8f4ec;
+    font-family: 'Fredoka', system-ui, -apple-system, sans-serif;
+    font-weight: 300;
+    font-stretch: 87.5%;
+    font-variation-settings: 'wdth' 87.5, 'wght' 300;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading, .font-heading span, h1 span, h2 span, h3 span {
+    font-family: 'Slackey', cursive, sans-serif !important;
+    letter-spacing: 0.02em;
+  }
+
+  p, span, a, button, input, textarea, .font-body {
+    font-family: 'Fredoka', system-ui, -apple-system, sans-serif;
+    font-stretch: 87.5%;
+  }
+
+  p {
+    font-weight: 300;
+    font-variation-settings: 'wdth' 87.5, 'wght' 300;
+  }
+
+  /* When custom cursor is active on fine-pointer devices */
+  @media (pointer: fine) {
+    body.has-custom-cursor,
+    body.has-custom-cursor * {
+      cursor: none !important;
+    }
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #140103;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #4d050d;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #d4af37;
+  }
+}
+
+/* Chinese vertical text */
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  letter-spacing: 0.25em;
+}
+
+/* Shimmer animation for gold accents */
+@keyframes goldShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.gold-shimmer {
+  background: linear-gradient(90deg, #d4af37 0%, #fbf0b9 50%, #d4af37 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: goldShimmer 6s linear infinite;
+}
+
+/* Subtle pulse glow */
+.crimson-glow {
+  box-shadow: 0 0 50px -10px rgba(184, 23, 38, 0.35);
+}
+
+.gold-glow {
+  box-shadow: 0 0 35px -5px rgba(212, 175, 55, 0.3);
+}
+
+/* Glassmorphic panels */
+.glass-panel {
+  background: rgba(38, 2, 6, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.glass-panel:hover {
+  border-color: rgba(212, 175, 55, 0.35);
+}
+
+/* Modern entrance animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+
+/* Levitating and Chi Button Animations */
+@keyframes floatLevitate {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes chiPulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 16px rgba(212, 175, 55, 0.25), inset 0 0 12px rgba(212, 175, 55, 0.15);
+    border-color: rgba(245, 222, 122, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(245, 222, 122, 0.55), inset 0 0 18px rgba(245, 222, 122, 0.3);
+    border-color: rgba(255, 235, 150, 0.85);
+  }
+}
+
+@keyframes chiRingRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-float-levitate {
+  animation: floatLevitate 3.6s ease-in-out infinite;
+}
+
+.animate-chi-pulse {
+  animation: chiPulseGlow 2.4s ease-in-out infinite;
+}
+
+.animate-ring-rotate {
+  animation: chiRingRotate 12s linear infinite;
+}
+
+
